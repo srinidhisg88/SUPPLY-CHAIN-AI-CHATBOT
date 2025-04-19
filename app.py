@@ -146,3 +146,10 @@ async def chat_with_db(
         import traceback
         error_details = traceback.format_exc()
         raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}\n{error_details}")
+    
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 8000))  # Render will inject PORT
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
