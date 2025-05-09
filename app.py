@@ -69,7 +69,7 @@ async def chat_with_db(
     try:
         llm = ChatGroq(
             groq_api_key=api_key,
-            model_name="gemma2-9b-it",
+            model_name="llama-3.3-70b-versatile",
             streaming=False
         )
 
